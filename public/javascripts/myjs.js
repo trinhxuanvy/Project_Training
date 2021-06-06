@@ -3,7 +3,7 @@ src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
 $(document).ready(function () {
     // Xử lý header fixed
     $(function () {
-        var header = $('.header-container');
+        var header = $('.header-full-top');
         var offset = $(header).offset();
         var topHeader = offset.top;
 
@@ -12,10 +12,10 @@ $(document).ready(function () {
             let topWindow = $(this).scrollTop();;
 
             if (topWindow > topHeader) {
-                $(header).addClass('header-container-fixed');
+                $(header).addClass('header-top-fixed');
             }
             else {
-                $(header).removeClass('header-container-fixed');
+                $(header).removeClass('header-top-fixed');
             }
         });
     });
@@ -81,7 +81,7 @@ $(document).ready(function () {
     });
 
     $(function () {
-        $('.index-page .categories-1 .owl-carousel').owlCarousel({
+        $('.index-page .categories-1 .owl-slide-1').owlCarousel({
             loop: true,
             nav: true,
             margin: 20,
@@ -98,7 +98,51 @@ $(document).ready(function () {
                     items: 4
                 }
             }
-        })
+        });
+
+        $('.index-page .categories-3 .owl-slide-2').owlCarousel({
+            loop: true,
+            nav: true,
+            margin: 20,
+            autoplay: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 2,
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                },
+                1090: {
+                    items: 5
+                }
+            }
+        });
+
+        $('.index-page .categories-4 .owl-slide-2').owlCarousel({
+            loop: true,
+            nav: true,
+            margin: 20,
+            autoplay: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 2,
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                },
+                1090: {
+                    items: 5
+                }
+            }
+        });
     });
 
     // Xử header trang admin
@@ -165,4 +209,5 @@ $(document).ready(function () {
             });
         });
     });
+    new WOW().init();
 });

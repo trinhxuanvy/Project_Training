@@ -1,42 +1,721 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <%- include('partials/style.ejs')  %> 
 
-    <title>Document</title>
+    <%- include('partials/style.ejs') %>
+
+        <title>Document</title>
 </head>
+
 <body>
 
-    <%- include('partials/menu-top.ejs')  %>
+    <%- include('partials/menu-top.ejs') %>
 
-    <div class="index-page">
-        <div class="categories-1">
-            <div class="slide-banner">
-                <div class="owl-carousel owl-slide">
-                    <div class="item">
-                        <div class="image">
-                            <img src="/images/banner-1.png" alt="">
+        <div class="index-page">
+            <div class="categories-1">
+                <div class="slide-banner">
+                    <div class="owl-carousel owl-slide-1">
+                        <div class="item">
+                            <div class="image">
+                                <img src="/images/banner-1.png" alt="">
+                            </div>
+                            <div class="detail"></div>
                         </div>
-                        <div class="detail"></div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="/images/banner-2.png" alt="">
+                        <div class="item">
+                            <div class="image">
+                                <img src="/images/banner-2.png" alt="">
+                            </div>
+                            <div class="detail"></div>
                         </div>
-                        <div class="detail"></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    
-    <%- include('partials/footer.ejs')  %> 
 
-    <%- include('partials/javascript.ejs')  %> 
+            <!-- <div class="categories-2">
+            <div class="banner">
+                <div class="header">
+                    <p class="title">Quyên lợi học viên</p>
+                </div>
+                <div class="body">
+                    <div class="item">
+                        <div class="item-header">
+                            fa-
+                        </div>
+                        
+                    </div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                </div>
+            </div
+        </div> -->
+
+            <div class="categories-3">
+                <div class="header-cate">
+                    <p class="title">Khóa học mới cho bạn</p>
+                </div>
+                <div class="container">
+                    <div class="header">
+                        <a href="" class="header-link"><p class="title">Các lớp học kĩ thuật</p></a>
+                        <a href="" class="header-link"><span>Xem thêm</span></a>
+                    </div>
+                    <div class="slide-courses">
+                        <div class="owl-carousel owl-slide-2">
+                            <div class="item wow fadeInDown">
+                                <a href="/courses/technical/1" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-1.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span>VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                                <div class="icon-new">
+                                    <img src="/images/new.png" alt="">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-2.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe After Effects CC</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span> VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                                <div class="icon-new">
+                                    <img src="/images/new.png" alt="">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-3.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Thiết kế đồ họa với Ps, Ai, Id</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span> VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-4.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span> VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-5.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span> VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="header">
+                        <a href="" class="header-link"><p class="title">Các lớp học cấp chứng chỉ</p></a>
+                        <a href="" class="header-link"><span>Xem thêm</span></a>
+                    </div>
+                    <div class="slide-courses">
+                        <div class="owl-carousel owl-slide-2">
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-1.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span> VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-2.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe After Effects CC</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span> VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-3.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Thiết kế đồ họa với Ps, Ai, Id</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span> VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-4.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span> VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-5.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span> VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="header">
+                        <a href="" class="header-link"><p class="title">Các lớp học chuyên đề</p></a>
+                        <a href="" class="header-link"><span>Xem thêm</span></a>
+                    </div>
+                    <div class="slide-courses">
+                        <div class="owl-carousel owl-slide-2">
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-1.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span> VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-2.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe After Effects CC</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span> VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-3.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Thiết kế đồ họa với Ps, Ai, Id</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span> VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                                <div class="icon-new">
+                                    <img src="/images/new.png" alt="">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-4.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span> VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                                <div class="icon-new">
+                                    <img src="/images/new.png" alt="">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-5.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span> <span>Dự kiến</span></p>
+                                        <p class="item-cost">500000<span> VNĐ</span></p>
+                                        <a href="" class="item-cart-link">Đăng ký khóa học</a>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="categories-4">
+                <div class="header-cate">
+                    <p class="title">Khóa học đã hoàn thành</p>
+                </div>
+                <div class="container">
+                    <div class="header">
+                        <a href="" class="header-link"><p class="title">Các lớp học kĩ thuật</p></a>
+                        <a href="" class="header-link"><span>Xem thêm</span></a>
+                    </div>
+                    <div class="slide-courses">
+                        <div class="owl-carousel owl-slide-2">
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-1.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-2.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe After Effects CC</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-3.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Thiết kế đồ họa với Ps, Ai, Id</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-4.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-5.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="header">
+                        <a href="" class="header-link"><p class="title">Các lớp học cấp chứng chỉ</p></a>
+                        <a href="" class="header-link"><span>Xem thêm</span></a>
+                    </div>
+                    <div class="slide-courses">
+                        <div class="owl-carousel owl-slide-2">
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-1.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-2.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe After Effects CC</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-3.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Thiết kế đồ họa với Ps, Ai, Id</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-4.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-5.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="header">
+                        <a href="" class="header-link"><p class="title">Các lớp học chuyên đề</p></a>
+                        <a href="" class="header-link"><span>Xem thêm</span></a>
+                    </div>
+                    <div class="slide-courses">
+                        <div class="owl-carousel owl-slide-2">
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-1.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-2.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe After Effects CC</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-3.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Thiết kế đồ họa với Ps, Ai, Id</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-4.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="" class="item-link">
+                                    <div class="image">
+                                        <img src="/images/tech-5.jpg" alt="">
+                                    </div>
+                                    <div class="detail">
+                                        <p class="item-name">Adobe XD UI UX Design</p>
+                                        <p class="item-time">Khai giảng: <span>15-7-2021</span></p>
+                                        <p class="item-rating">
+                                            <span>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                            </span>
+                                            <span>25/25 Học viên</span>
+                                        </p>
+                                        <p class="item-complete">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span>Đã xong</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%- include('partials/footer.ejs') %>
+        </div>
+
+        <%- include('partials/javascript.ejs') %>
 
 </body>
+
 </html>

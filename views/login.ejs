@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include('partials/style.ejs') %>
+
+        <title>Document</title>
+</head>
+
+<body>
+
+    <%- include('partials/menu-top.ejs') %>
+
+    <div class="checkout-page">
+        <div class="check-out">
+            <div class="item">
+                <div class="header">
+                    <p class="title">Đăng nhập</p>
+                </div>
+                <form action="">
+                    <label for="email-checkout"><input type="email" name="email-checkout" placeholder="Email" required></label>
+                    <label for="pass-checkout"><input type="password" name="pass-checkout" placeholder="Mật khẩu" required></label>                 
+                    <button type="submit">Đăng nhập</button>
+                </form>
+                <a href="" class="forget"><i class="fa fa-question-circle" aria-hidden="true"></i> Quên mật khẩu</a>
+                <div class="login-social">
+                    <a href="" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a>
+                    <a href="" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i> Google</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="header">
+                    <p class="title">Bạn chưa có tài khoản</p>
+                </div>
+                <p class="para">Đăng ký tài khoản ngay để có thể mua những khóa học nhanh chóng và dễ dàng hơn ! Ngoài ra còn có rất nhiều chính sách và ưu đãi cho các thành viên.</p>
+                <a href="checkout2.html" class="sign-in">Đăng ký</a>
+            </div>
+        </div>
+
+        <%- include('partials/footer.ejs') %>
+    </div>
+    
+
+    <%- include('partials/javascript.ejs') %>
+
+</body>
+
+</html>
+
