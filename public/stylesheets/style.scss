@@ -1331,7 +1331,6 @@ $color_backgr: #1E1E1C;
                                font-weight: bolder;
                                &:hover {
                                    background-color: $color_blue_hover;
-                                   border-color: $color_blue_hover;
                                }
                             }
                             .no-active {
@@ -1339,8 +1338,45 @@ $color_backgr: #1E1E1C;
                                 color: $color_blue;
                                 border: 2px solid $color_blue;
                                 margin-top: 8px;
+                                padding: 14px 0;
+                                position: relative;
+                                overflow: hidden;
+                                &::after {
+                                    position: absolute;
+                                    content: '';
+                                    display: block;
+                                    width: 100%;
+                                    height: 100px;
+                                    background-color: $color_blue;
+                                    left: -50%;
+                                    top: -250%;
+                                    transition: 0.6s;
+                                    z-index: 9;
+                                }
+                                &::before {
+                                    position: absolute;
+                                    content: '';
+                                    display: block;
+                                    width: 100%;
+                                    height: 100px;
+                                    background-color: $color_blue;
+                                    right: -50%;
+                                    bottom: -250%;
+                                    transition: 0.6s;
+                                    z-index: 9;
+                                }
                                 &:hover {
                                     color: #fff;
+                                    &::after {
+                                        top: 0;
+                                    }
+                                    &::before {
+                                        bottom: 0;
+                                    }
+                                }
+                                span {
+                                    position: relative;
+                                    z-index: 10;
                                 }
                             }
                         }
