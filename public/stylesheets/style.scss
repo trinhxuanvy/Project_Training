@@ -1150,8 +1150,8 @@ $color_backgr: #1E1E1C;
         z-index: 0;
         top: 90px;
     }
-    .footer-expand {
-        z-index: 0;
+    .footer {
+        z-index: 100;
     }
     .container {
 		position: relative;
