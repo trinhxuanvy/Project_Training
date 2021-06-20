@@ -1,7 +1,7 @@
 src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
 
 $(document).ready(function () {
-    // Xử lý header fixed
+    //Xử lý header fixed
     $(function () {
         var header = $('.header-full-top');
         var offset = $(header).offset();
@@ -143,6 +143,31 @@ $(document).ready(function () {
                 }
             }
         });
+
+        $('.technical-detail-page .land-cate-slide .owl-slide-1').owlCarousel({
+            loop: true,
+            nav: true,
+            margin: 0,
+            autoplay: true,
+            dots: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        });
+    });
+
+    // Nút scroll top
+    $('.btn-top').click(function (e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
     });
 
     // Xử header trang admin

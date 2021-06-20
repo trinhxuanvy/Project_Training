@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include('partials/style.ejs') %>
+
+        <title>Document</title>
+</head>
+
+<body>
+
+    <%- include('partials/menu-top.ejs') %>
+
+    <div class="register-page">
+        <div class="check-out check-out-2">
+            <div class="item">
+                <div class="header">
+                    <p class="title">Đăng ký</p>
+                </div>
+                <form action="index.html" method="POST">
+                    <label for="name-checkout"></label>
+                    <input type="text" name="name-checkout" placeholder="Họ và tên" required>
+                    <label for="phone-checkout"></label>
+                    <input type="text" name="phone-checkout" placeholder="Điện thoại" required>
+                    <label for="email-checkout"></label>
+                    <input type="email" name="email-checkout" placeholder="Email" required>
+                    <label for="pass-checkout"></label>
+                    <input type="password" name="pass-checkout" placeholder="Mật khẩu" required>
+                    <button type="submit">Đăng ký</button>
+                </form>
+                <div class="login-social">
+                    <a href="" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a>
+                    <a href="" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i> Google</a>
+                </div>
+            </div>
+        </div>
+
+        <%- include('partials/footer.ejs') %> 
+    </div>
+
+
+    <%- include('partials/javascript.ejs') %>
+
+</body>
+
+</html>
+
