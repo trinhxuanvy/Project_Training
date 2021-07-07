@@ -7,8 +7,7 @@ module.exports = {
             let connection;
 
             try {
-                connection = await data.connect1('QLTT', 'abcd1234');
-
+                connection = await data.connect1('c##admin_tt', 'abcd1234');
                 let result = await connection.execute(query);
 
                 resolve(result.rows);
@@ -29,11 +28,11 @@ module.exports = {
     getCheckData: async function (query) {
         try {
             let result = await this.getData(query);
-            result = jwt.sign({ result }, 'abcd1234', { algorithm: 'HS256', expiresIn: '3h' });
+            //result = jwt.sign({ result }, 'abcd1234', { algorithm: 'HS256', expiresIn: '3h' });
 
             return result;
         } catch (error) {
-            return 0;
+            return [];
         }
     },
 

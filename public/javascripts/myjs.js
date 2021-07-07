@@ -291,28 +291,63 @@ $(document).ready(function () {
                 let hasClass = $(boxItem[i]).hasClass('active');
                 if (hasClass) {
                     $(boxItem[i]).removeClass('active');
+                    let clear = $(`.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table-${i + 1} .outcheckBoxIn`);
+                    let count = 0;
+                    for (let k = 0; k < clear.length; k++) {
+                        if (clear[k].checked) {
+                            count++;
+                        }
+                    }
+
+                    if (count == 0) {
+                        clearCheck(i);
+                    }
                 }
-                let valCheck = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table .outcheckBoxIn');
-                let getPar = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table table tbody tr')
+                let valCheck = $(`.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table .outcheckBoxIn-${i + 1}`);
+                let getPar = $(`.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table-${i + 1} table tbody tr`)
+
                 let outVal = $('.personal-technical-page .categories table tbody');
                 let html = $(outVal[0]).html();
                 for (let j = 0; j < valCheck.length; j++) {
                     if (valCheck[j].checked) {
                         let val = $(valCheck[j]).val();
                         let getVal = $(getPar[j]).html();
-                        html += `<tr>${getVal}</tr>`;
+                        html += `<tr class='row-${i}-${j}'>${getVal}</tr>`;
+                        $(outVal[0]).html(html);
+                    }
+                    else {
+                        clearCheckRe(i, j);
                     }
                 }
-                $(outVal[0]).html(html);
+               
+                let obj = $('.personal-technical-page .categories table tbody tr');
+                $(obj).each(function () { 
+                    let text = $(this).text();
+                    if (obj[text]) {
+                        $(this).remove();
+                    }
+                    else {
+                        obj[text] = true;
+                    }
+                });
             });
         }
     });
+
+    function clearCheckRe(x, y) {
+        let obj = $(`.personal-technical-page .categories table tbody .row-${x}-${y}`);
+        return $(obj[0]).remove();
+    };
+
+    function clearCheck(pos) {
+        let item = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-table .table-2 tbody tr th .checkBoxGr');
+        return item[pos].checked = false;
+    }
 
     $(function () {
         let checkRadio = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table .outcheckBoxIn');
         for (let i = 0; i < checkRadio.length; i++) {
             $(checkRadio[i]).on("mousedown", function () {
-                console.log('bb')
                 if (this.checked) {
                     $(this).one("click", function () {
                         
@@ -322,6 +357,77 @@ $(document).ready(function () {
             });
         }
     });
+
+    chooseGroupTech();
+
+    function chooseGroupTech() {
+        let item = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-table .table-2 tbody tr th .checkBoxGr');
+        for (let i = 0; i < item.length; i++) {
+            $(item[i]).on("mousedown", function () {
+                $(this).one('click', function (e) {
+                    if (this.checked) {
+                        let boxItem = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table');
+                        let hasClass = $(boxItem[i]).hasClass('active');
+                        if (!hasClass) {
+                            $(boxItem[i]).addClass('active');
+                        }
+                    }
+                    else {
+                        this.checked = true;
+                    }
+                });
+                $(this).one('click', function (e) {
+                    if (this.checked) {
+                        let boxItem = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table');
+                        let hasClass = $(boxItem[i]).hasClass('active');
+                        if (!hasClass) {
+                            $(boxItem[i]).addClass('active');
+                        }
+                    }
+                    else {
+                        this.checked = true;
+                    }
+                });
+                $(this).on('dblclick', function (e) {
+                    this.checked = false;
+                    let boxItem = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table');
+                    let hasClass = $(boxItem[i]).hasClass('active');
+                    if (hasClass) {
+                        $(boxItem[i]).removeClass('active');
+                    }
+
+                    let clearCheck = $(`.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table-${i + 1} .outcheckBoxIn`);
+                    for (let k = 0; k < clearCheck.length; k++) {
+                        clearCheck[k].checked = false;
+                    }
+                });
+
+ 
+            });
+        }
+    }
+
+    // getObjGroupTech();
+
+    // function getObjGroupTech() {
+    //     let choose = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-table .table-2 tbody tr th .checkBoxGr');
+    //     let boxItem = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table table tbody');
+    //     let href = window.location.href + '/group';
+
+    //     for (let i = 0; i < choose.length; i++) {
+    //         $(choose[i]).on("mousedown", function () {
+    //             $.ajax({
+    //                 url: href,
+    //                 contentType: "application/json",
+    //                 method: "POST",
+    //                 data: JSON.stringify({ query: $(this).val() }),
+    //                 success: function (response) {
+    //                     $(boxItem[i]).html(response);
+    //                 }
+    //             });
+    //         });
+    //     }
+    // }
 
     new WOW().init();
 });

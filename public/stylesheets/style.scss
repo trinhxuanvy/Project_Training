@@ -2086,22 +2086,22 @@ $color_backgr: #1E1E1C;
                             border-radius: 10px;
                             background-color: #F5F5F5;
                         }
-                        table {
+                        .table-all {
                             min-width: 768px;
                             border-collapse: collapse;
                             thead {
                                 tr {
                                     th {
-                                        padding: 6px 0;
-                                        border: 1px solid $color_border;
+                                        border: 1px solid #dadada;
+                                        padding: 8px;
                                         &:nth-child(1) {
-                                            width: 8%;
+                                            width: 8;
                                         }
                                         &:nth-child(2) {
-                                            width: 15%;
+                                            width: 12%;
                                         }
                                         &:nth-child(3) {
-                                            width: 50%;
+                                            width: 35%;
                                         }
                                         &:nth-child(4) {
                                             width: 10%;
@@ -2110,68 +2110,57 @@ $color_backgr: #1E1E1C;
                                             width: 10%;
                                         }
                                         &:nth-child(6) {
-                                            width: 10%;
+                                            width: 25%;
                                         }
-                                        
                                     }
                                 }
                             }
                             tbody {
-                                font-size: 14px;
                                 tr {
+                                    position: relative;
+                                    
                                     th {
-                                        padding: 6px 0;
-                                        border: 1px solid $color_border;
+                                        padding: 8px;
+                                        border: 1px solid #dadada;
                                         font-weight: normal;
-                                        &:nth-child(1) {
-                                            width: 8%;
-                                        }
-                                        &:nth-child(2) {
-                                            width: 15%;
-                                        }
-                                        &:nth-child(3) {
-                                            width: 50%;
-                                        }
-                                        &:nth-child(4) {
-                                            width: 10%;
-                                        }
-                                        &:nth-child(5) {
-                                            width: 10%;
-                                        }
-                                        &:nth-child(6) {
-                                            width: 10%;
-                                        }
-                                        p {
-                                            padding: 0 8px;
-                                        }
+                                        font-size: 14px;
+                                    }
+                                }
+                                .hidden {
+                                    &::after {
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 50px;
+                                        background: #bdb7b746;
+                                        content: '';
+                                        left: 0;
                                     }
                                 }
                             }
                         }
                         .table-2 {
+                            border-collapse: collapse;
+                            width: 100%;
+                            min-width: 768px;
                             thead {
                                 tr {
                                     th {
+                                        padding: 8px;
+                                        border: 1px solid #dadada;
                                         &:nth-child(1) {
-                                            width: 8%;
+                                            width: 10%;
                                         }
                                         &:nth-child(2) {
-                                            width: 15%;
+                                            width: 10%;
                                         }
                                         &:nth-child(3) {
-                                            width: 15%;
+                                            width: 30%;
                                         }
                                         &:nth-child(4) {
                                             width: 30%;
                                         }
                                         &:nth-child(5) {
-                                            width: 10%;
-                                        }
-                                        &:nth-child(6) {
-                                            width: 10%;
-                                        }
-                                        &:nth-child(7) {
-                                            width: 10%;
+                                            width: 20%;
                                         }
                                     }
                                 }
@@ -2180,26 +2169,11 @@ $color_backgr: #1E1E1C;
                                 font-size: 14px;
                                 tr {
                                     th {
-                                        &:nth-child(1) {
-                                            width: 8%;
-                                        }
-                                        &:nth-child(2) {
-                                            width: 15%;
-                                        }
-                                        &:nth-child(3) {
-                                            width: 15%;
-                                        }
-                                        &:nth-child(4) {
-                                            width: 30%;
-                                        }
-                                        &:nth-child(5) {
-                                            width: 10%;
-                                        }
-                                        &:nth-child(6) {
-                                            width: 10%;
-                                        }
-                                        &:nth-child(7) {
-                                            width: 10%;
+                                        font-weight: normal;
+                                        border: 1px solid #dadada;
+                                        padding: 8px;
+                                        input {
+                                            cursor: pointer;
                                         }
                                     }
                                 }
@@ -2237,7 +2211,7 @@ $color_backgr: #1E1E1C;
                     .box-out-table {
                         position: fixed;
                         top: 50%;
-                        left: 50%;
+                        right: 64px;
                         width: 0;
                         transition: 0.2s;
                         opacity: 0;
@@ -2247,10 +2221,55 @@ $color_backgr: #1E1E1C;
                         padding: 32px 0;
                         display: flex;
                         justify-content: center;
-                        transform: translate(-50%, -50%);
+                        transform: translateY(-50%);
                         background-color: #fff;
                         z-index: 1000;
                         .box-container {
+                            .box-table {
+                                display: flex;
+                                .table-2 {
+                                    width: 100%;
+                                    thead {
+                                        tr {
+                                            th {
+                                                padding: 8px;
+                                                border: 1px solid #dadada;
+                                                &:nth-child(1) {
+                                                    width: 10%;
+                                                }
+                                                &:nth-child(2) {
+                                                    width: 10%;
+                                                }
+                                                &:nth-child(3) {
+                                                    width: 20%;
+                                                }
+                                                &:nth-child(4) {
+                                                    width: 30%;
+                                                }
+                                                &:nth-child(5) {
+                                                    width: 15%;
+                                                }
+                                                &:nth-child(6) {
+                                                    width: 15%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    tbody {
+                                        font-size: 14px;
+                                        tr {
+                                            th {
+                                                font-weight: normal;
+                                                border: 1px solid #dadada;
+                                                padding: 8px;
+                                                input {
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             .box-btn {
                                 .btn-complete {
                                     display: block;
@@ -2272,7 +2291,7 @@ $color_backgr: #1E1E1C;
                         
                     }
                     .active {
-                        width: 90%;
+                        width: 60%;
                         opacity: 1;
                     }
                 }
