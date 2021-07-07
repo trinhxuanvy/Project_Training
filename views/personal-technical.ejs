@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include('partials/style.ejs') %>
+
+        <title>Document</title>
+</head>
+
+<body>
+
+    <%- include('partials/menu-top.ejs') %>
+
+    <div class="personal-page personal-technical-page">
+        <div class="container">
+            <div class="header">
+                <p class="title">Danh mục lớp kỹ thuật</p>
+            </div>
+            <div class="body">
+                <div class="land-cate">
+                    <div class="land-content">
+                        <div class="land-header">
+                            <p class="title">Lớp kỹ thuật</p>
+                        </div>
+                        <div class="land-body">
+                            <a href="/personal/technical" class="land-link <% if (typeLink == 0) { %>active<% } %>"><i class="fa fa-caret-right" aria-hidden="true"></i> Các khóa học kỹ thuật</a>
+                            <a href="<% if (getIDCourse != -1) { %>/personal/technical/<%= getIDCourse %>/register<% } %>" class="land-link <% if (typeLink == 1) { %>active<% } %>"><i class="fa fa-caret-right" aria-hidden="true"></i> Đăng ký nhóm học phần</a>
+                            <a href="<% if (getIDCourse != -1) { %>/personal/technical/<%= getIDCourse %>/history<% } %>" class="land-link <% if (typeLink == 2) { %>active<% } %>"><i class="fa fa-caret-right" aria-hidden="true"></i> Kết quả đăng ký</a>
+                            <a href="/personal" class="land-link"><i class="fa fa-caret-right" aria-hidden="true"></i> Quay lại</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="land-cate">            
+                    <% if (typeLink == 0) { %>
+                        <form action="/personal/technical" method="POST">
+                            <div class="box-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Chọn</th>
+                                            <th>Mã khóa học</th>
+                                            <th>Tên khóa học</th>
+                                            <th>Lịch học</th>
+                                            <th>Tuần bắt đầu</th>
+                                            <th>Tuần kết thúc</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                <label for="checkBox"></label>
+                                                <input type="radio" id="checkBox" name="checkBox" value="1">
+                                            </th>
+                                            <th>
+                                                <p>MSL121</p>
+                                            </th>
+                                            <th>
+                                                <p>Đào tạo frontend & backend</p>
+                                            </th>
+                                            <th>
+                                                <p>17h (Thứ 3, 5, 7)</p>
+                                            </th>
+                                            <th>
+                                                <p>15/07/2021</p>
+                                            </th>
+                                            <th>
+                                                <p>15/11/2021</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label for="checkBox"></label>
+                                                <input type="radio" id="checkBox" name="checkBox" value="2">
+                                            </th>
+                                            <th>
+                                                <p>MSL121</p>
+                                            </th>
+                                            <th>
+                                                <p>Đào tạo frontend & backend</p>
+                                            </th>
+                                            <th>
+                                                <p>17h (Thứ 3, 5, 7)</p>
+                                            </th>
+                                            <th>
+                                                <p>15/07/2021</p>
+                                            </th>
+                                            <th>
+                                                <p>15/11/2021</p>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="box-btn">
+                                <button class="btn-submit">Tiếp tục</button>
+                            </div>
+                            <div class="box-notice">
+                                <p class="title"><span>Lưu ý:</span> Chọn một tối đa 1 khóa học để tiếp tục đăng ký lớp học.</p>
+                            </div>
+                        </form>
+                    <% } else if (typeLink == 1 && getIDCourse != -1) { %>
+                        <form action="">
+                            <div class="box-table">
+                                <table class="table-2">
+                                    <thead>
+                                        <tr>
+                                            <th>Chọn</th>
+                                            <th>Mã nhóm</th>
+                                            <th>Tên nhóm</th>
+                                            <th>Lịch học</th>
+                                            <th>Tuần bắt đầu</th>
+                                            <th>Tuần kết thúc</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                <label for="checkBox_1"></label>
+                                                <input type="radio" id="checkBox_1" class="checkBoxIn" name="checkBox_1" value="1">
+                                            </th>
+                                            <th>
+                                                <p>MN5214</p>
+                                            </th>
+                                            <th>
+                                                <p>Nhóm A</p>
+                                            </th>
+                                            <th>
+                                                <p>17h (Thứ 3, 5, 7)</p>
+                                            </th>
+                                            <th>
+                                                <p>15/07/2021</p>
+                                            </th>
+                                            <th>
+                                                <p>15/11/2021</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label for="checkBox_1"></label>
+                                                <input type="radio" id="checkBox_1" class="checkBoxIn" name="checkBox_1" value="2">
+                                            </th>
+                                            <th>
+                                                <p>MN5214</p>
+                                            </th>
+                                            <th>
+                                                <p>Nhóm B</p>
+                                            </th>
+                                            <th>
+                                                <p>17h (Thứ 3, 5, 7)</p>
+                                            </th>
+                                            <th>
+                                                <p>15/07/2021</p>
+                                            </th>
+                                            <th>
+                                                <p>15/11/2021</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label for="checkBox_2"></label>
+                                                <input type="radio" id="checkBox_2" class="checkBoxIn" name="checkBox_2" value="5">
+                                            </th>
+                                            <th>
+                                                <p>MN1542</p>
+                                            </th>
+                                            <th>
+                                                <p>Nhóm A</p>
+                                            </th>
+                                            <th>
+                                                <p>17h (Thứ 3, 5, 7)</p>
+                                            </th>
+                                            <th>
+                                                <p>15/07/2021</p>
+                                            </th>
+                                            <th>
+                                                <p>15/11/2021</p>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="box-notice">
+                                <p class="title"><span>Lưu ý:</span> Mỗi nhóm học phần chỉ được chọn 1.</p>
+                            </div>
+                            <div class="box-out-table">
+                                <div class="box-container">
+                                    <div class="box-table">
+                                        <table class="table-2">
+                                            <thead>
+                                                <tr>
+                                                    <th>Chọn</th>
+                                                    <th>Mã học phần</th>
+                                                    <th>Tên học phần</th>
+                                                    <th>Lịch học</th>
+                                                    <th>Tuần bắt đầu</th>
+                                                    <th>Tuần kết thúc</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>
+                                                        <label for="checkBox_1_1"></label>
+                                                        <input type="radio" class="outcheckBoxIn" id="checkBox_1_1" name="checkBox_1_1" value="1">
+                                                    </th>
+                                                    <th>
+                                                        <p>HP123</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>HTML, CSS, JS cơ bản</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>17h (Thứ 3, 5, 7)</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/07/2021</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/11/2021</p>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label for="checkBox_1_1"></label>
+                                                        <input type="radio" class="outcheckBoxIn" id="checkBox_1_1" name="checkBox_1_1" value="2">
+                                                    </th>
+                                                    <th>
+                                                        <p>HP654</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>HTML, CSS, JS cơ bản</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>17h (Thứ 3, 5, 7)</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/07/2021</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/11/2021</p>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label for="checkBox_1_2"></label>
+                                                        <input type="radio" class="outcheckBoxIn" id="checkBox_1_2" name="checkBox_1_2" value="3">
+                                                    </th>
+                                                    <th>
+                                                        <p>HP412</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>HTML, CSS, JS cơ bản</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>17h (Thứ 3, 5, 7)</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/07/2021</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/11/2021</p>
+                                                    </th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="box-btn">
+                                        <button type="button" class="btn-complete">Chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-out-table">
+                                <div class="box-container">
+                                    <div class="box-table">
+                                        <table class="table-2">
+                                            <thead>
+                                                <tr>
+                                                    <th>Chọn</th>
+                                                    <th>Mã học phần</th>
+                                                    <th>Tên học phần</th>
+                                                    <th>Lịch học</th>
+                                                    <th>Tuần bắt đầu</th>
+                                                    <th>Tuần kết thúc</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>
+                                                        <label for="checkBox_1_1"></label>
+                                                        <input type="radio" class="outcheckBoxIn" id="checkBox_1_1" name="checkBox_1_1" value="1">
+                                                    </th>
+                                                    <th>
+                                                        <p>HP123</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>HTML, CSS, JS cơ bản</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>17h (Thứ 3, 5, 7)</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/07/2021</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/11/2021</p>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label for="checkBox_1_1"></label>
+                                                        <input type="radio" class="outcheckBoxIn" id="checkBox_1_1" name="checkBox_1_1" value="2">
+                                                    </th>
+                                                    <th>
+                                                        <p>HP654</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>HTML, CSS, JS cơ bản</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>17h (Thứ 3, 5, 7)</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/07/2021</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/11/2021</p>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label for="checkBox_1_2"></label>
+                                                        <input type="radio" class="outcheckBoxIn" id="checkBox_1_2" name="checkBox_1_2" value="3">
+                                                    </th>
+                                                    <th>
+                                                        <p>HP412</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>HTML, CSS, JS cơ bản</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>17h (Thứ 3, 5, 7)</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/07/2021</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/11/2021</p>
+                                                    </th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="box-btn">
+                                        <button type="button" class="btn-complete">Chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-out-table">
+                                <div class="box-container">
+                                    <div class="box-table">
+                                        <table class="table-2">
+                                            <thead>
+                                                <tr>
+                                                    <th>Chọn</th>
+                                                    <th>Mã học phần</th>
+                                                    <th>Tên học phần</th>
+                                                    <th>Lịch học</th>
+                                                    <th>Tuần bắt đầu</th>
+                                                    <th>Tuần kết thúc</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>
+                                                        <label for="checkBox_1_1"></label>
+                                                        <input type="radio" class="outcheckBoxIn" id="checkBox_1_1" name="checkBox_1_1" value="1">
+                                                    </th>
+                                                    <th>
+                                                        <p>HP123</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>HTML, CSS, JS cơ bản</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>17h (Thứ 3, 5, 7)</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/07/2021</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/11/2021</p>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label for="checkBox_1_1"></label>
+                                                        <input type="radio" class="outcheckBoxIn" id="checkBox_1_1" name="checkBox_1_1" value="2">
+                                                    </th>
+                                                    <th>
+                                                        <p>HP654</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>HTML, CSS, JS cơ bản</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>17h (Thứ 3, 5, 7)</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/07/2021</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/11/2021</p>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label for="checkBox_1_2"></label>
+                                                        <input type="radio" class="outcheckBoxIn" id="checkBox_1_2" name="checkBox_1_2" value="3">
+                                                    </th>
+                                                    <th>
+                                                        <p>HP412</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>HTML, CSS, JS cơ bản</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>17h (Thứ 3, 5, 7)</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/07/2021</p>
+                                                    </th>
+                                                    <th>
+                                                        <p>15/11/2021</p>
+                                                    </th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="box-btn">
+                                        <button type="button" class="btn-complete">Chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    <% } else if (typeLink == 2 && getIDCourse != -1) { %>
+                        <form action="">
+                            <div class="box-table">
+                                <table class="table-2">
+                                    <thead>
+                                        <tr>
+                                            <th>Chọn</th>
+                                            <th>Mã nhóm</th>
+                                            <th>Tên nhóm</th>
+                                            <th>Lịch học</th>
+                                            <th>Tuần bắt đầu</th>
+                                            <th>Tuần kết thúc</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                <label for="checkBox_1"></label>
+                                                <input type="radio" id="checkBox_1" name="checkBox_1" value="1">
+                                            </th>
+                                            <th>
+                                                <p>MSL121</p>
+                                            </th>
+                                            <th>
+                                                <p>HTML, CSS, JS cơ bản</p>
+                                            </th>
+                                            <th>
+                                                <p>17h (Thứ 3, 5, 7)</p>
+                                            </th>
+                                            <th>
+                                                <p>15/07/2021</p>
+                                            </th>
+                                            <th>
+                                                <p>15/11/2021</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label for="checkBox_2"></label>
+                                                <input type="radio" id="checkBox_2" name="checkBox_2" value="2">
+                                            </th>
+                                            <th>
+                                                <p>MSL121</p>
+                                            </th>
+                                            <th>
+                                                <p>MH105</p>
+                                            </th>
+                                            <th>
+                                                <p>HTML, CSS, JS cơ bản</p>
+                                            </th>
+                                            <th>
+                                                <p>17h (Thứ 3, 5, 7)</p>
+                                            </th>
+                                            <th>
+                                                <p>15/07/2021</p>
+                                            </th>
+                                            <th>
+                                                <p>15/11/2021</p>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="box-btn">
+                                    <button type="button" class="btn-submit">Hủy đăng ký</button>
+                                </div>
+                            </div>
+                            
+                        </form>
+                     <% } %> 
+                </div>
+            </div>
+
+        </div>
+
+        <div class="categories">
+            <form action="" method="POST">
+                <div class="box-out-table">
+                    <div class="box-container">
+                        <div class="box-table">
+                            <table class="table-2">
+                                <thead>
+                                    <tr>
+                                        <th>Chọn</th>
+                                        <th>Mã học phần</th>
+                                        <th>Tên học phần</th>
+                                        <th>Lịch học</th>
+                                        <th>Tuần bắt đầu</th>
+                                        <th>Tuần kết thúc</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-btn">
+                            <button type="submit" class="btn-complete">Đăng ký</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+
+        <%- include('partials/footer.ejs') %> 
+    </div>
+
+    <%- include('partials/javascript.ejs') %>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include('partials/style.ejs') %>
+
+        <title>Document</title>
+</head>
+
+<body>
+
+    <%- include('partials/menu-top.ejs') %>
+
+    <div class="personal-infor-page personal-page">
+        <div class="container">
+            <div class="header">
+                <p class="title">Quản lý tài khoản</p>
+            </div>
+            <div class="body">
+                <form action="">
+                    <div class="form-item">
+                        <p class="title">Tên tài khoản:</p>
+                        <label for="nameAccount"></label>
+                        <input type="text" id="nameAccount" name="nameAcount" value="" required placeholder="abcuser">
+                    </div>
+                    <div class="form-item">
+                        <p class="title">Mật khẩu:</p>
+                        <label for="password"></label>
+                        <input type="text" id="password" name="password" value="" required placeholder="123456789">
+                    </div>
+                    <div class="form-item">
+                        <p class="title">Họ và tên:</p>
+                        <label for="nameUser"></label>
+                        <input type="text" id="nameUser" name="nameUser" value="" required placeholder="Lê Văn A">
+                    </div>
+                    <div class="form-item">
+                        <p class="title">Số điện thoại:</p>
+                        <label for="numPhone"></label>
+                        <input type="text" id="numPhone" name="numPhone" value="" required placeholder="0706******">
+                    </div>
+                    <div class="box-btn">
+                        <button class="btn-save"><span>Lưu thay đổi</span><i class="far fa-save"></i></button>
+                        <a href="/personal" class="btn-back"><span>Quay lại</span><i class="fas fa-undo-alt    "></i></a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <%- include('partials/footer.ejs') %> 
+    </div>
+
+    <%- include('partials/javascript.ejs') %>
+
+</body>
+
+</html>

@@ -23,13 +23,13 @@ $(document).ready(function () {
     $(function () {
         let btnSearchHeader = $('.header-top .header-container .user-top .menu-list .menu-item .btn-search-click');
 
-        $(btnSearchHeader[0]).click(function (e) { 
+        $(btnSearchHeader[0]).click(function (e) {
             e.preventDefault();
 
             let boxSearch = $('.header-top .header-container .user-top .menu-list .menu-item .box-search');
             let hasClass = $(boxSearch[0]).hasClass('show');
 
-            if(hasClass) {
+            if (hasClass) {
                 $(boxSearch[0]).removeClass('show');
             }
             else {
@@ -42,7 +42,7 @@ $(document).ready(function () {
     $(function () {
         let btnToggle = $('.header-top .header-container .toggle-top .btn-toggle');
 
-        $(btnToggle[0]).click(function (e) { 
+        $(btnToggle[0]).click(function (e) {
             e.preventDefault();
             let hasClass = $(this).hasClass('active');
             let menu = $('.header-top .header-container .menu-top');
@@ -218,6 +218,53 @@ $(document).ready(function () {
         return str;
     }
 
+    // Hàm xử lý item trang personal
+    $(function () {
+        let itemPer = $('.personal-page .container .body .land-cate:nth-child(1) .land-content .item');
+        for (let i = 0; i < itemPer.length; i++) {
+            $(itemPer[i]).click(function (e) {
+                e.preventDefault();
+                let itemDis = $('.personal-page .container .body .land-cate:nth-child(2) .land-content');
+                for (var j = 0; j < itemDis.length; j++) {
+                    if (i == j) {
+                        $(itemDis[i]).addClass('display');
+                        $(itemPer[i]).addClass('item-active');
+                    }
+                    else {
+                        $(itemDis[j]).removeClass('display');
+                        $(itemPer[j]).removeClass('item-active');
+                    }
+                }
+            });
+        }
+    });
+
+    // Hàm bỏ checked
+    $(function () {
+        let itemRadio = $('.personal-technical-page .checkBoxIn');
+        for (let i = 0; i < itemRadio.length; i++) {
+            $(itemRadio[i]).on("mousedown", function () {
+                if (this.checked) {
+                    $(this).one("click", function () {
+                        this.checked = false;
+                        let checkRadio = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table .outcheckBoxIn');
+                        for (let k = 0; k < checkRadio.length; k++) {
+                            checkRadio[k].checked = false;
+                        }
+                    });
+                }
+                else {
+                    let boxItem = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table');
+                    let hasClass = $(boxItem[i]).hasClass('active');
+                    if (!hasClass) {
+                        $(boxItem[i]).addClass('active');
+                    }
+                    this.checked = true;
+                }
+            });
+        }
+    });
+
     // Hàm lọc table
     $(function () {
         let search = $('.admin-container .box-find .form-find input');
@@ -234,5 +281,47 @@ $(document).ready(function () {
             });
         });
     });
+
+    $(function () {
+        let btnComp = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table .box-container .box-btn .btn-complete');
+        for (let i = 0; i < btnComp.length; i++) {
+            $(btnComp[i]).click(function (e) { 
+                e.preventDefault();
+                let boxItem = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table');
+                let hasClass = $(boxItem[i]).hasClass('active');
+                if (hasClass) {
+                    $(boxItem[i]).removeClass('active');
+                }
+                let valCheck = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table .outcheckBoxIn');
+                let getPar = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table table tbody tr')
+                let outVal = $('.personal-technical-page .categories table tbody');
+                let html = $(outVal[0]).html();
+                for (let j = 0; j < valCheck.length; j++) {
+                    if (valCheck[j].checked) {
+                        let val = $(valCheck[j]).val();
+                        let getVal = $(getPar[j]).html();
+                        html += `<tr>${getVal}</tr>`;
+                    }
+                }
+                $(outVal[0]).html(html);
+            });
+        }
+    });
+
+    $(function () {
+        let checkRadio = $('.personal-technical-page .body .land-cate:nth-child(2) form .box-out-table .outcheckBoxIn');
+        for (let i = 0; i < checkRadio.length; i++) {
+            $(checkRadio[i]).on("mousedown", function () {
+                console.log('bb')
+                if (this.checked) {
+                    $(this).one("click", function () {
+                        
+                        this.checked = false;
+                    });
+                }
+            });
+        }
+    });
+
     new WOW().init();
 });

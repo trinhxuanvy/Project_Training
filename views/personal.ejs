@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include('partials/style.ejs') %>
+
+        <title>Document</title>
+</head>
+
+<body>
+
+    <%- include('partials/menu-top.ejs') %>
+
+    <div class="personal-page">
+        <div class="container">
+            <div class="header">
+                <p class="title">Danh mục quản lý</p>
+            </div>
+            <div class="body">
+                <div class="land-cate">
+                    <div class="land-content">
+                        <div class="item item-active">
+                            <div class="image">
+                                <img src="/images/icon-48-user.png" alt="">
+                            </div>
+                            <div class="detail">
+                                <p class="title">User Account</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="image">
+                                <img src="/images/technical.png" alt="">
+                            </div>
+                            <div class="detail">
+                                <p class="title">Lớp kỹ thuật</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="image">
+                                <img src="/images/thematic.png" alt="">
+                            </div>
+                            <div class="detail">
+                                <p class="title">Lớp chuyên đề</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="image">
+                                <img src="/images/certificate.png" alt="">
+                            </div>
+                            <div class="detail">
+                                <p class="title">Lớp cấp chứng chỉ</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="image">
+                                <img src="/images/icon-48-category.png" alt="">
+                            </div>
+                            <div class="detail">
+                                <p class="title">Quản lý học tập</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="land-cate">
+                    <div class="land-content display">
+                        <div class="land-header">
+                            <p class="title">User Account</p>
+                        </div>
+                        <div class="land-body">
+                            <a href="/personal/infor" class="land-link"><i class="fa fa-caret-right" aria-hidden="true"></i> Thay đổi thông tin</a>
+                            <a href="/logout" class="land-link"><i class="fa fa-caret-right" aria-hidden="true"></i> Đăng xuất</a>
+                        </div>
+                    </div>
+                    <div class="land-content">
+                        <div class="land-header">
+                            <p class="title">Lớp kỹ thuật</p>
+                        </div>
+                        <div class="land-body">
+                            <a href="/personal/technical" class="land-link"><i class="fa fa-caret-right" aria-hidden="true"></i> Đăng ký lớp lỹ thuật</a>
+                            <a href="" class="land-link"><i class="fa fa-caret-right" aria-hidden="true"></i> Kết quả đăng ký</a>
+                        </div>
+                    </div>
+                    <div class="land-content">
+                        <div class="land-header">
+                            <p class="title">Lớp chuyên đề</p>
+                        </div>
+                        <div class="land-body">
+                            <a href="" class="land-link"><i class="fa fa-caret-right" aria-hidden="true"></i> Đăng ký lớp chuyên đề</a>
+                            <a href="" class="land-link"><i class="fa fa-caret-right" aria-hidden="true"></i> Kết quả đăng ký</a>
+                        </div>
+                    </div>
+                    <div class="land-content">
+                        <div class="land-header">
+                            <p class="title">Lớp cấp chứng chỉ</p>
+                        </div>
+                        <div class="land-body">
+                            <a href="" class="land-link"><i class="fa fa-caret-right" aria-hidden="true"></i> Đăng ký lớp cấp chứng chỉ</a>
+                            <a href="" class="land-link"><i class="fa fa-caret-right" aria-hidden="true"></i> Kết quả đăng ký</a>
+                        </div>
+                    </div>
+                    <div class="land-content">
+                        <div class="land-header">
+                            <p class="title">Quản lý học tập</p>
+                        </div>
+                        <div class="land-body">
+                            <a href="" class="land-link"><i class="fa fa-caret-right" aria-hidden="true"></i> Xem thời khóa biểu</a>
+                            <a href="" class="land-link"><i class="fa fa-caret-right" aria-hidden="true"></i> Xem lịch thi</a>
+                            <a href="" class="land-link"><i class="fa fa-caret-right" aria-hidden="true"></i> Đăng ký xét tốt nghiệp</a>
+                            <a href="" class="land-link"><i class="fa fa-caret-right" aria-hidden="true"></i> Đăng ký cấp chứng chỉ</a>
+                            <a href="" class="land-link"><i class="fa fa-caret-right" aria-hidden="true"></i> Kết quả học tập</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <%- include('partials/footer.ejs') %> 
+    </div>
+
+    <%- include('partials/javascript.ejs') %>
+
+</body>
+
+</html>

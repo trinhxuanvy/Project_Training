@@ -11,8 +11,12 @@ a {
     text-decoration: none;
 }
 
-input ,input:focus, textarea:focus, button:focus, select:focus {
+input, input:focus, textarea:focus, button:focus, select:focus {
     outline: none !important;
+}
+
+input[type='radio'] {
+    cursor: pointer;
 }
 
 body {

@@ -1,4 +1,4 @@
-/* Copyright (c) 2019, Oracle and/or its affiliates. All rights reserved. */
+/* Copyright (c) 2019, 2021, Oracle and/or its affiliates. All rights reserved. */
 
 /******************************************************************************
  *
@@ -19,13 +19,12 @@
  *   prunebinaries.js
  *
  * DESCRIPTION
- *   Removes pre-built binaries for all other Node.js releases and architectures.
- *   It keeps only the binary for the current Node.js version and architecture.
+ *   Removes pre-built binaries for all other architectures.
  *   This can be used to reduce the footprint of a node-oracledb install.
  *
  * USAGE
  *   Invoke this from the top level directory.
- *   After an 'npm install oracledb' installs pre-built binaries it
+ *   After an 'npm install oracledb' installs pre-built binaries, this file
  *   can be run with 'npm run prune'.
  *
  *****************************************************************************/
@@ -46,6 +45,6 @@ try {
       fs.unlinkSync(dir + '/' + f[i]);
     }
   }
-} catch(err) {
+} catch (err) {
   console.error(err.message);
 }
